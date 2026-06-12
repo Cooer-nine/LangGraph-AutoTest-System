@@ -1,4 +1,4 @@
-# AI自动化测试框架 (AI-NAC)
+# AI自动化测试框架 (LangGraph-AutoTest-System)
 
 一个基于 LLM Agent 的智能自动化测试框架，支持 Web、SSH、桌面端等多种执行环境，具备视觉理解和自然语言处理能力。
 
@@ -14,7 +14,7 @@
 ## 🏗️ 架构设计
 
 ```
-iotnac/
+AutoTest/
 ├── agent/              # Agent 核心
 │   ├── nodes/         # 工作流节点（理解、规划、执行、验证、总结）
 │   ├── tools/         # 工具集（Web、SSH、桌面、视觉、知识库）
@@ -54,7 +54,7 @@ iotnac/
 
 ```bash
 # 克隆仓库
-git clone https://github.com/your-username/ai-nac.git
+git clone https://github.com/your-username/LangGraph-AutoTest-System.git
 cd ai-nac
 
 # 创建虚拟环境
