@@ -1,0 +1,47 @@
+# 示例：Web 控制台登录测试
+title: "登录功能验证 - 正常登录"
+description: "验证使用正确的用户名和密码能否正常登录 Web 控制台"
+
+steps:
+  - description: "打开Web控制台登录页"
+    target: web
+    action: navigate
+    params:
+      url: "http://192.168.3.101:8080"
+
+  - description: "输入用户名 admin"
+    target: web
+    action: input
+    params:
+      element: "用户名输入框"
+      value: "admin"
+
+  - description: "输入密码 Admin123"
+    target: web
+    action: input
+    params:
+      element: "密码输入框"
+      value: "Admin123"
+
+  - description: "输入图形验证码"
+    target: web
+    action: input
+    params:
+      element: "验证码输入框"
+      value: "<需人工识别或OCR>"
+
+  - description: "勾选'我已阅读并同意'复选框"
+    target: web
+    action: click
+    params:
+      element: "我已阅读并同意复选框"
+
+  - description: "点击登录按钮"
+    target: web
+    action: click
+    params:
+      element: "登录按钮"
+
+assertions:
+  - "页面包含导航菜单"
+  - "页面右上角有登录用户名"

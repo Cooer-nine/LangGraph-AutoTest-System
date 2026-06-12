@@ -1,0 +1,25 @@
+title: 登录功能验证
+steps:
+- description: 打开控制台页面
+  target: web
+  action: navigate
+  params: {}
+  _auto_classified: true
+- description: 输入用户名admin
+  target: web
+  action: input
+  params: {}
+  _auto_classified: true
+- description: 输入密码123456
+  target: web
+  action: input
+  params: {}
+  _auto_classified: true
+- description: 点击登录按钮
+  target: web
+  action: click
+  params: {}
+  _auto_classified: true
+assertions:
+- 显示欢迎页
+- 页面包含导航菜单

@@ -1,0 +1,59 @@
+# ============================================
+# 示例测试用例 - 登录功能验证
+# ============================================
+# 这是一个 YAML 格式的测试用例示例
+# 实际使用时，请根据被测产品的页面结构调整
+
+test_name: "登录功能验证"
+description: "验证用户使用正确凭据能够成功登录系统"
+priority: "high"
+tags:
+  - login
+  - smoke_test
+
+steps:
+  - step: 1
+    action: "navigate"
+    description: "打开登录页面"
+    target: "${WEB_CONSOLE_URL}"
+    timeout: 30
+
+  - step: 2
+    action: "fill"
+    description: "填写用户名"
+    target: "username input"
+    locator_type: "auto"  # auto | css | xpath | id | name
+    value: "admin"
+
+  - step: 3
+    action: "fill"
+    description: "填写密码"
+    target: "password input"
+    locator_type: "auto"
+    value: "Admin@123"
+
+  - step: 4
+    action: "click"
+    description: "点击登录按钮"
+    target: "login button"
+    locator_type: "auto"
+
+  - step: 5
+    action: "wait"
+    description: "等待页面跳转"
+    timeout: 5
+
+  - step: 6
+    action: "verify"
+    description: "验证登录成功"
+    target: "dashboard title"
+    expected: "控制台"
+    verification_type: "text_contains"  # text_equals | text_contains | visible | exists
+
+# 预期结果
+expected_result: "成功登录并跳转到控制台首页"
+
+# 截图配置
+screenshot:
+  on_success: false  # 成功时是否截图
+  on_failure: true   # 失败时是否截图

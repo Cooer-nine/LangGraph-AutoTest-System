@@ -1,0 +1,31 @@
+# ============================================
+# 环境拓扑配置
+# 网络连通由运维保证，此处仅记录连接信息
+# ============================================
+
+devices:
+  controller:
+    type: linux_server
+    host: "${CONTROLLER_HOST:192.168.1.100}"
+    port: 22
+    user: "${CONTROLLER_USER:root}"
+    password: "${CONTROLLER_PASSWORD:}"
+    services:
+      - name: "控制器服务"
+        process_name: "controllerd"
+        log_path: "/var/log/controller/app.log"
+
+  switch:
+    type: huawei_switch
+    connection_type: telnet
+    host: "${SWITCH_HOST:192.168.1.1}"
+    port: 23
+    user: "${SWITCH_USER:admin}"
+    password: "${SWITCH_PASSWORD:}"
+    os: "VRP"
+
+  web_console:
+    type: web_service
+    url: "${WEB_CONSOLE_URL:http://192.168.1.100:8080}"
+    browser: chromium
+    headless: false
